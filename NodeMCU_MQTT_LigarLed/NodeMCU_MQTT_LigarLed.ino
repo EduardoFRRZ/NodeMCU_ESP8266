@@ -54,16 +54,11 @@ void loop() {
 
 // Função chamada ao receber uma mensagem do Subscribe
 void callback(char* topic, byte* payload, unsigned int length) {  
-  //Serial.print("Message arrived [");
-  //Serial.print(topic);
-  //Serial.print("] ");
   String valor = "";
   for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
+    //Serial.print((char)payload[i]);
     valor += (char)payload[i];
   }
-  Serial.println();
-  //led = valor.toInt();
   led = valor.toInt();
 }
 
